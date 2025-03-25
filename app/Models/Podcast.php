@@ -13,7 +13,7 @@ class Podcast extends Model
 
     protected $guarded = ['id'];
 
-    public function episodes(): HasMany
+    public function episode(): HasMany
     {
         return $this->hasMany(Episode::class);
     }
