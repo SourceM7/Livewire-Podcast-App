@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Listening extends Model
 {
@@ -20,8 +21,13 @@ class Listening extends Model
         'end_time' => 'datetime',
     ];
 
-    public function episodes(): BelongsTo
+    public function episode(): BelongsTo
     {
         return $this->belongsTo(Episode::class);
+    }
+
+    public function podcast(): HasOneThrough
+    {
+        return $this->hasOneThrough(Podcast::class, Episode::class, 'id', 'id', 'episode_id', 'podcast_id');
     }
 }
