@@ -30,4 +30,8 @@ class Listening extends Model
     {
         return $this->hasOneThrough(Podcast::class, Episode::class, 'id', 'id', 'episode_id', 'podcast_id');
     }
+
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
 }

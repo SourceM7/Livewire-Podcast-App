@@ -87,8 +87,7 @@ new class extends Component {
             <h3 class="mb-4 font-serif text-[0.9rem] font-bold">Upcoming Listening Parties</h3>
             <div class="bg-white rounded-lg shadow-lg">
                 @if ($listeningParties->isEmpty())
-                    <div class="flex items-center justify-center p-6 font-serif text-sm">No awwdio listening parties
-                        started yet... 😔</div>
+                    <div class="flex items-center justify-center p-6 font-serif text-sm">No Audio Started Yet 🎙️</div>
                 @else
                     @foreach ($listeningParties as $Listening)
                         <div wire:key="{{ $Listening->id }}">
