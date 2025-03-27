@@ -13,7 +13,8 @@
    ```bash
    php artisan migrate
    php artisan reverb:start & 
-   php artisan queue:work &   
+   php artisan queue:work &
+   php artisan schedule:work   
    npm run dev
    php artisan serve
    ```
