@@ -24,7 +24,7 @@ new class extends Component {
             'media_url' => $this->mediaUrl,
         ]);
 
-        $listeningParty = Listening::create([
+        $Listening = Listening::create([
             'episode_id' => $episode->id,
             'name' => $this->name,
             'start_time' => $this->startTime,
@@ -70,7 +70,7 @@ new class extends Component {
         <div class="w-full max-w-lg">
             <x-card shadow="lg" rounded="lg">
                 <h2 class="font-serif text-xl font-bold text-center">Let's listen together.</h2>
-                <form wire:submit='createListening' class="mt-6 space-y-6">
+                <form wire:submit='createListeningParty' class="mt-6 space-y-6">
                     <x-input wire:model='name' placeholder="Listening Party Name" />
                     <x-input wire:model='mediaUrl' placeholder="Podcast RSS Feed URL"
                         description="Entering the RSS Feed URL will grab the latest episode" />
